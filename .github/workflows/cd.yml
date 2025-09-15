@@ -1,12 +1,8 @@
----
 name: Continuous Deployment
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+on: push
 jobs:
   Deploy:
-    runs-on: ubuntu-latest
+    runs-on: puzl-ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
@@ -34,7 +30,7 @@ jobs:
           branch: ${{ github.ref }}
   Contributors:
     needs: Deploy
-    runs-on: ubuntu-latest
+    runs-on: puzl-ubuntu-latest
     steps:
       - uses: wow-actions/contributors-list@v1
         with:

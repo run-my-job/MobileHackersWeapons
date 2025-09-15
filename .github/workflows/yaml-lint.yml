@@ -1,11 +1,10 @@
----
 name: YAML Lint
 on:
   pull_request:
     branches: [main]
 jobs:
   lintAllTheThings:
-    runs-on: ubuntu-latest
+    runs-on: puzl-ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: yaml-lint
